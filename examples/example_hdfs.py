@@ -5,7 +5,7 @@ import torch
 from sklearn.metrics import classification_report
 
 # Import DeepLog and Preprocessor
-from deeplog              import DeepLog
+from deeplog.deeplog      import DeepLog
 from deeplog.preprocessor import Preprocessor
 
 ##############################################################################
@@ -19,9 +19,9 @@ preprocessor = Preprocessor(
 )
 
 # Load data from HDFS dataset
-X_train       , y_train       , label_train       , mapping_train        = preprocessor.text("./data/hdfs_train"        , verbose=True)
-X_test        , y_test        , label_test        , mapping_test         = preprocessor.text("./data/hdfs_test_normal"  , verbose=True)
-X_test_anomaly, y_test_anomaly, label_test_anomaly, mapping_test_anomaly = preprocessor.text("./data/hdfs_test_abnormal", verbose=True)
+X_train       , y_train       , label_train       , mapping_train        = preprocessor.text("./examples/data/hdfs_train.txt"        , verbose=True)
+X_test        , y_test        , label_test        , mapping_test         = preprocessor.text("./examples/data/hdfs_test_normal.txt"  , verbose=True)
+X_test_anomaly, y_test_anomaly, label_test_anomaly, mapping_test_anomaly = preprocessor.text("./examples/data/hdfs_test_abnormal.txt", verbose=True)
 
 ##############################################################################
 #                                  DeepLog                                   #
